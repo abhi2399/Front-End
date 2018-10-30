@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Login</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <style type="text/css">
+  	.log
+  	{
+  		width: 500px;
+  		margin-left: 400px;
+  		margin-top: 100px;
+  	}
+  </style>
+  <script type="text/javascript">
+  	function submitform()
+  	{
+  		var a=document.getElementById("fm-user").value;
+  		var b=document.getElementById('fm-email').value;
+  		var c=document.getElementById('fm-pass').value;
+  		//var d=document.getElementById('fm-repass').value;
+    	var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+         
+         if(a == "")
+         {
+         	alert("Please fill the username");
+         }
+         else
+         {
+         	if(reg.test(b) == false)
+         	{
+         		alert('Please give correct email')
+         	}
+         	else
+         	{
+         		if( c=='' || 8>=c.length)
+         		{
+                   alert('check your password');
+         		}
+         		else
+         		{
+         			alert("submit");
+         		}
+         	}
+         }
+  
+
+}
+  </script>
+</head>
+<body>
+<!-- Default form login -->
+<div class="log">
+<div class="card">
+	<form id="login-frm" >
+    <div class="card-block" >
+
+        <!--Header-->
+        <div class="form-header blue-gradient">
+            <h3><center><i class="fa fa-user"></i>Register:</center></h3>
+        </div>
+
+        <!--Body-->
+        <div class="md-form">
+            <i class="fa fa-user prefix"></i>
+            <input type="text" id="fm-user" class="form-control" placeholder="Your name">
+            
+        </div>
+        <div class="md-form">
+            <i class="fa fa-envelope prefix"></i>
+            <input type="text" id="fm-email" class="form-control" placeholder="Your email">
+           
+        </div>
+
+        <div class="md-form">
+            <i class="fa fa-lock prefix"></i>
+            <input type="password" id="fm-pass" class="form-control" placeholder="Your password">
+           
+        </div>
+
+
+        <div class="text-center">
+            <!-- <button class="btn btn-indigo" id="btnlogin">Sign up</button> -->
+             <input type="submit" class="btn btn-blue" value="Login" name="Submit" id="btnlogin" onClick="submitform()">
+            
+        </div>
+
+    </div>
+</form>
+</div>
+</div>
+<!--/Form with header-->
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<script>
+    
+
+</script>
+</body>
+</html>
