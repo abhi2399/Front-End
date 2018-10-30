@@ -1,0 +1,69 @@
+<!doctype.html>
+<html ng-app>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script>
+function nextpage(a){
+	if(a==1){
+	alert('payment sucessful.Your token id is 123546');
+	window.location.href="home.html";
+	}
+	if(a==2){
+	alert('payment failed');
+	window.location.href="home.html";
+	}
+	if(a==3){
+	alert('Pay on delivery is sucessfully applied');
+	window.location.href="home.html";
+	}
+	}
+</script>
+</head>
+<body >
+<input type="radio" name="payment" ng-model="hideSalary" value="r1" /> Credit/Debit Cards <br />
+<div ng-show="hideSalary==='r1'">
+		<div class="container">
+			<span>Name:</span><input type="text" class="col-lg-3 form-control" placeholder="Name on Card">
+		    <span>Card Number: </span><input type="text" class="col-lg-3 form-control" placeholder="Number on Card">
+		    <span>CVV Number</span><input type="text" placeholder="3 Digit Number" class="col-lg-3 form-control">
+		    <span>Expiry Date</span><input type="number" placeholder="Date" name="c3" class="col-lg-1 form-control">
+		    <input type="number" placeholder="Year" class="col-lg-2 form-control" style="margin-top: -38px; margin-left: 110px;">
+		    <div class="btn btn-outline-primary mt-2"><span onclick="nextpage(1)">Pay</span></div>
+		    <div class="btn btn-outline-primary mt-2"><span onclick="nextpage(2)">Cancel</span></div>
+		</div>	
+</div>
+
+<input type="radio" name="payment" ng-model="hideSalary" value="r2"/> Net Banking <br />
+<div ng-show="hideSalary==='r2'">
+	<div class="container">
+		<span>User</span><input type="text" class="col-lg-3 form-control" placeholder="User Id">
+		<span>Card Number: </span><input type="password" class="col-lg-3 form-control" placeholder="Password">
+		<div class="btn btn-outline-primary mt-2"><span onclick="nextpage(1)">Pay</span></div>
+		<div class="btn btn-outline-primary mt-2"><span onclick="nextpage(2)">Cancel</span></div>
+	</div>
+</div>
+
+<input type="radio" name="payment" ng-model="hideSalary" value="r3" />Pay on Delivery <br />
+<div ng-show="hideSalary==='r3'">
+	<div class="container">
+		<div class="btn btn-outline-primary mt-2"><span onclick="nextpage(3)">Proceed</span></div>
+		<div class="btn btn-outline-primary mt-2"><span onclick="nextpage(2)">Cancel</span></div>
+	</div>	
+</div>
+
+
+<input type="radio" name="payment" ng-model="hideSalary" value="r4" /> EMI <br />
+<div ng-show="hideSalary==='r4'">    
+	<div class="container">
+			<span>Name:</span><input type="text" class="col-lg-3 form-control" placeholder="Name on Card">
+			<span>Card Number: </span><input type="text" class="col-lg-3 form-control" placeholder="Number on Card">
+		    <span>CVV Number</span><input type="text" placeholder="3 Digit Number" class="col-lg-3 form-control">
+		    <span>Expiry Date</span><input type="number" placeholder="Date" name="c3" class="col-lg-1 form-control">
+		    <input type="number" placeholder="Year" class="col-lg-2 form-control" style="margin-top: -38px; margin-left: 110px;">
+		    <div class="btn btn-outline-primary mt-2"><span onclick="nextpage(1)">Pay</span></div>
+		    <div class="btn btn-outline-primary mt-2"><span onclick="nextpage(2)">Cancel</span></div>
+	</div>
+</div> 
+</body>
+</html ng-app>
